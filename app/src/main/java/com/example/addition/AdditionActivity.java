@@ -37,10 +37,15 @@ public class AdditionActivity extends ActionBarActivity {
 		btnAdd.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
-				num1 = Double.parseDouble(firstNumber.getText().toString());
-				num2 = Double.parseDouble(secondNumber.getText().toString());
-				sum = num1 + num2;
-				addResult.setText(Double.toString(sum));
+				if (firstNumber.getText().toString().equals("") || secondNumber.getText().toString().equals("")) {
+					addResult.setText("NaN");
+				}
+				else {
+					num1 = Double.parseDouble(firstNumber.getText().toString());
+					num2 = Double.parseDouble(secondNumber.getText().toString());
+					sum = num1 + num2;
+					addResult.setText(Double.toString(sum));
+				}
 			}
 		});
 	}
